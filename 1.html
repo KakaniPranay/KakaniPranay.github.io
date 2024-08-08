@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <h1>Hello, jQuery!</h1>
+    <button id="change-text">Change Text</button>
+    <div id="content">This is some content.</div>
+
+    <script>
+        // jQuery code will go here
+        $(document).ready(function () {
+            // Change the text of the div when the button is clicked
+            $('#change-text').click(function () {
+                $('#content').text('The text has been changed!');
+            });
+
+            // Add a CSS class to the h1 element
+            $('h1').addClass('highlight');
+
+            // Make an Ajax request to a placeholder API
+            $.ajax({
+                url: 'https://jsonplaceholder.typicode.com/posts/1',
+                method: 'GET',
+                success: function (data) {
+                    console.log(data);
+                },
+                error: function (error) {
+                    console.error('Error fetching data', error);
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
